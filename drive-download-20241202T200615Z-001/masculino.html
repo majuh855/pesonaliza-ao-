@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Vestir Boneca Chibi</title>
+
+
+
+
+
+
+
+    <style>
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-image: url(fundo.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #fafafa;
+        }
+
+        .avatar-container {
+            width: 800px;
+            height: 800px;
+            position: relative;
+            margin: 20px auto;
+            margin-top: 100px;
+            translate: -400px
+        }
+
+        .avatar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .avatar2 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            border: none;
+        }
+
+        .options {
+            margin-top: 30px;
+        }
+
+        .options select,
+        .options button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .option-label {
+            font-weight: bold;
+        }
+
+        .options-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            translate: -579px -14px;
+            background-color: #fafafa1e;
+            width: 500px;
+            height: 500px;
+
+        }
+
+        .option-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            padding: 0 20px;
+        }
+
+        .option-box img {
+            width: 60px;
+            height: auto;
+            margin: 5px 0;
+            cursor: pointer;
+        }
+
+        .centro {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+        }
+
+        #calca{
+            width: 40px;
+            height: 70px;
+        }
+
+        
+
+    
+
+
+    </style>
+</head>
+
+<body>
+
+
+    <h1>Vestir Boneco</h1>
+
+    <div class="centro">
+
+        <div class="avatar-container">
+
+            <img id="avatarBase" class="avatar" src="homem.png">
+            <img id="avatarcabelo" class="avatar" src="cabelo1.png">
+            <img id="avatarcamisa" class="avatar2" src="camisa1.png">
+            <img id="avatarcalca" class="avatar" src="calça1.png">
+
+        </div>
+
+
+
+
+        <div class="options-container">
+
+
+            <div class="option-box">
+
+                <img src="icones/cabelo1_icon.png"  onclick="selectCabelo('cabelo1.png')">
+                <img src="icones/cabelo2_icon.png"  onclick="selectCabelo('cabelo2.png')">
+                <img src="icones/cabelo3_icon.png"  onclick="selectCabelo('cabelo3.png')">
+
+            </div>
+
+
+            <div class="option-box">
+
+                <img src="icones/camisa1_icon.png"  onclick="selectCamisas('camisa1.png')">
+                <img src="icones/camisa2_icon.png"   onclick="selectCamisas('camisa2.png')">
+                <img src="icones/camisa3_icon.png"  onclick="selectCamisas('camisa3.png')">
+
+            </div>
+
+
+            <div class="option-box">
+
+                <img src="icones/calça1_icon.png" id="calca" onclick="selectCalcas('calça1.png')">
+                <img src="icones/calça2_icon.png" id="calca" onclick="selectCalcas('calça2.png')">
+                <img src="icones/calça3_icon.png" id="calca" onclick="selectCalcas('calça3.png')">
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function updateAvatar() {
+            var cabelo = document.getElementById('cabelo').value;
+            var camisa = document.getElementById('camisa').value;
+            var calca = document.getElementById('calca').value;
+
+
+            document.getElementById('avatarcabelo').src = cabelo;
+
+
+            document.getElementById('avatarcamisa').src = camisa;
+
+
+            document.getElementById('avatarcalca').src = calca;
+        }
+
+
+        function selectCabelo(cabeloSrc) {
+            document.getElementById('avatarcabelo').src = cabeloSrc;
+            document.getElementById('cabelo').value = cabeloSrc;
+        }
+
+        function selectCamisas(camisaSrc) {
+            document.getElementById('avatarcamisa').src = camisaSrc;
+            document.getElementById('camisa').value = camisaSrc;
+        }
+
+        function selectCalcas(calcaSrc) {
+            document.getElementById('avatarcalca').src = calcaSrc;
+            document.getElementById('calca').value = calcaSrc;
+        }
+    </script>
+
+</body>
+
+</html>

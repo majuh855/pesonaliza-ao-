@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <style>
+      .meio {
+         height: 100%;
+         width: 100%;
+         display: flex;
+         justify-content: space-around;
+         margin-top: 200px;
+      }
+
+      #masculino {
+         height: 500px;
+         width: 500px;
+      }
+
+      #feminino {
+         height: 500px;
+         width: 500px;
+
+      }
+
+      #texto {
+         display: flex;
+         justify-content: center;
+         color: rgb(255, 243, 240);
+
+      }
+
+      body {
+         background-image: url(fundo2.jpg);
+         background-size: cover;
+         background-repeat: no-repeat;
+      }
+      button{
+        width: 500px;
+        height: 500px;
+        border-radius: 40%;
+        cursor: pointer;
+      }
+
+   </style>
+   <script>
+function majuh(){
+
+    window.location.href = "feminini.html";
+
+
+}
+function masculini(){
+    window.location.href = "masculino.html";
+}
+
+
+   </script>
+</head>
+
+<body>
+   <div id="texto">
+      <h2 style="font-size: 55px;">Escolha o avatar </h2>
+   </div>
+   <div class="meio">
+      <div id="feminino">
+        <button onclick="majuh()"> <img src="avatar_feminino.png" style="height: 500px; width: 500px;"> </button>
+      </div>
+      <div id="masculino">
+         <button onclick="masculini()"> <img src="masculino.png"></button>
+      </div>
+</body>
+
+</html>

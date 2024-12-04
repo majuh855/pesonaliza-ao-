@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Jogo de Vestir Boneca Chibi</title>
+
+    <style>
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .avatar-container {
+
+            width: 700px;
+            height: 700px;
+
+            position: relative;
+            margin: 20px auto;
+          
+          
+            translate: -300px;
+            margin-top: 100px;
+         
+            
+        }
+
+        .avatar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+          
+        }
+        .avatar2{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+        }
+
+        .options {
+            margin-top: 30px;
+        }
+
+        .options select,
+        .options button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .option-label {
+            font-weight: bold;
+        }
+
+        .options-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+           
+            translate: -700px;
+            height: 400px;
+            margin-top: 200px;
+
+
+        }
+
+        .option-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .option-box img {
+            width: 80px;
+            height: auto;
+            margin: 5px 0;
+            cursor: pointer;
+        }
+
+        .centro {
+            display: flex;
+            width: 100%;
+            height: 100%;
+          
+        }
+        
+      body{
+    background-image: url(fundo.avif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+      }      
+
+
+
+    </style>
+
+</head>
+
+<body >
+
+    <h1 style="color: #f0f0f0;">Vestir Boneca </h1>
+
+    <div class="centro">
+
+        <div class="avatar-container">
+
+            <img id="avatarBase" class="avatar" src="avatar.png" >
+            <img id="avatarHair" class="avatar2" src="hair3.png" >
+            <img id="avatarClothes" class="avatar" src="clothes1.png" >
+            <img id="avatarAccessories" class="avatar" src="accessory1.png" >
+
+        </div>
+
+
+
+
+        <div class="options-container">
+            <div class="option-box">
+                
+                <img src="icone/cabelo1_icon.png" class="cabelo" onclick="selectHair('cabelo1.png')">
+                <img src="icone/cabelo2_icon.png" class="cabelo" onclick="selectHair('cabelo2.png')">
+                <img src="icone/cabelo3_icon.png" class="cabelo" onclick="selectHair('cabelo3.png')">
+            </div>
+
+            <div class="option-box">
+               
+                <img src="icone/vestido1_icon.png" class="vestdo" onclick="selectClothes('vestido1.png')">
+                <img src="icone/vestido2_icon.png" class="vestdo"  onclick="selectClothes('vestido2.png')">
+                <img src="icone/vestido3_icon.png" class="vestdo"  onclick="selectClothes('vestido3.png')">
+            </div>
+
+            <div class="option-box">
+              
+                <img src="icone/oculos1_icon.png"  class="oculos" onclick="selectAccessory('oculos1.png')">
+                <img src="icone/oculos2_icon.png" class="oculos"onclick="selectAccessory('oculos2.png')">
+                <img src="icone/oculos3_icon.png" class="oculos" onclick="selectAccessory('oculos3.png')">
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        function updateAvatar() {
+            var hair = document.getElementById('hair').value;
+            var clothes = document.getElementById('clothes').value;
+            var accessories = document.getElementById('accessories').value;
+
+
+            document.getElementById('avatarHair').src = hair;
+
+
+            document.getElementById('avatarClothes').src = clothes;
+
+
+            document.getElementById('avatarAccessories').src = accessories;
+        }
+
+
+        function selectHair(hairSrc) {
+            document.getElementById('avatarHair').src = hairSrc;
+            document.getElementById('hair').value = hairSrc;
+        }
+
+        function selectClothes(clothesSrc) {
+            document.getElementById('avatarClothes').src = clothesSrc;
+            document.getElementById('clothes').value = clothesSrc;
+        }
+
+        function selectAccessory(accessorySrc) {
+            document.getElementById('avatarAccessories').src = accessorySrc;
+            document.getElementById('accessories').value = accessorySrc;
+        }
+    </script>
+
+</body>
+
+</html>
